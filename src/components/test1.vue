@@ -1,13 +1,10 @@
 <template>
+<div class="container m-5">
 
-    <div class="container m-5">
-        <button class="btn-photo mr-auto ml-auto mb-5" @click="show = !show">
-            <div class="box"></div>
-        </button>
-        <template>
-            <div class="box-text mt-5" v-if='show'>テキストだよー</div>
-        </template>
-    </div>
+        <div class="box col-4" @click="$event.target.classList.toggle('slide')">クリック</div>
+        <div class="box-text col-4" v-move v-if='show'>テキストだよー</div>
+
+</div>
 
 </template>
 
@@ -16,7 +13,7 @@ export default {
     name: 'test1',
     data(){
         return{
-            show: false
+            show: true
         }
     }
 }
@@ -26,27 +23,27 @@ export default {
 <style scoped>
 .container{
     display: flex;
+
 }
 .box{
     height:300px;
     width:300px;
     background-color: blanchedalmond;
+    z-index: 5;
+
 }
 .box-text{
     height:300px;
     width:300px;
     background-color: rgb(255, 166, 31);
     text-align: center;
+    z-index:1;
 }
 
 
-button{
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    padding: 0;
-    appearance: none;
+.slide{
+    transform: translateX(100%);
+    transition: transform 1s;
 }
 
 
