@@ -1,3 +1,14 @@
 <template>
-    <h1>test3</h1>
+<div class="test3">
+  test3
+</div>
 </template>
+
+
+<script>
+
+</script>
+
+<style scoped>
+
+</style>
